@@ -14,14 +14,14 @@
 
 <img src="https://raw.githubusercontent.com/MatejKovacic/silent-sms-ping/master/design/main_window_silent_sms.png" width=200px>
 
-
 ### Message history record
-- whether message is incoming or outgoing;
-- if message was outgoing, what is result of a ping;
+Press on a history record opens a screen that shows message details:
+- arrow showing whether message is incoming or outgoing;
+- if message was outgoing, what is result of a ping (red, green or blue icon);
 - to or from phone number;
 - date and time of the message;
-- location (if recorded; see below);
-- technical data about the message.
+- location (if recorded if not: "not enabled"; see below for more info);
+- technical data about the message with complete payload and other PDU details.
 
 ### Application settings contain:
 - slider to select if you want to receive silent SMS messages;
@@ -30,5 +30,10 @@
 - input field for the URL of the server which is used for collecting information about received silent SMS messages;
 - device ID (only shown on a screen).
 
+<img src="https://raw.githubusercontent.com/MatejKovacic/silent-sms-ping/master/design/settings_window_silent_sms.png" width=200px>
+
 ### Notification
-- contains only text that Silent SMS has been detected, time and from number and "VIEW" button.
+Notification contains:
+- title: "Silent SMS ping - {time of notification}"
+- text "Silent SMS has been detected! \n Received from: {number/unknown} \n Detected at {date and time}"
+- "VIEW" button to open application.
