@@ -37,3 +37,13 @@ Notification contains:
 - title: "Silent SMS ping - {time of notification}"
 - text "Silent SMS has been detected! \n Received from: {number/unknown} \n Detected at {date and time}"
 - "VIEW" button to open application.
+
+### New functionality
+Proposal for new functionality: data collection for threat analytics. If user agrees (and select this in settings), data about received SMSes will be sent to threat analytics server:
+- device ID
+- date and time of event
+- number from which silent SMS has been received
+- phone location (if enabled)
+- PDU data (SMSC, payload,...)
+
+User can enter URL of the threat analytic server. Data collection would be used for detecting patterns, i. e. if silent SMSes are used to track users. Typical example of use: data from journalists are collected on their own threat analytics server. 
