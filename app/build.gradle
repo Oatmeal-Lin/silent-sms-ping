@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+apply plugin: 'project-report'
+
+android {
+    compileSdkVersion 33
+    buildToolsVersion '33.0.2'
+
+    compileOptions {
+        sourceCompatibility = 11
+        targetCompatibility = 11
+    }
+
+    defaultConfig {
+        applicationId "com.itds.sms.ping"
+        minSdkVersion 31
+        targetSdkVersion 33
+        versionCode 6
+        versionName "4"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def withoutMTP = {
+        exclude group: 'org.mobicents.protocols.ss7.mtp', module: 'mtp-api'
+        exclude group: 'org.mobicents.protocols.ss7.mtp', module: 'mtp'
+        exclude group: 'org.mobicents.protocols.ss7.sccp', module: 'sccp-api'
+        exclude group: 'org.mobicents.protocols.ss7.sccp', module: 'sccp'
+    }
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'org.mobicents.protocols.ss7.map:map-impl:8.0.112', withoutMTP
+    testImplementation 'junit:junit:4.13.2'
+}
