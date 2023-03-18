@@ -6,7 +6,7 @@ This is a fork and new development of [Android Silent SMS Ping](https://github.c
 - [Jure Poljšak](https://github.com/barracuda-fsh)
 - [Matej Kovačič](https://github.com/MatejKovacic)
 - Vesna Trenchovska
-- 
+
 ### License
 
-   The project is licensed under the [GNU General Public License version 3 (or newer)](https://github.com/MatejKovacic/silent-sms-ping/blob/master/LICENSE)
+The project is licensed under the [GNU General Public License version 3 (or newer)](https://github.com/MatejKovacic/silent-sms-ping/blob/master/LICENSE).
