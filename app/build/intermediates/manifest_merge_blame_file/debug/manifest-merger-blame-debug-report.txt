@@ -6,32 +6,32 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="31"
-8-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml
+8-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml
+9-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml
 10
 11    <uses-feature
-11-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:5:5-78
+11-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:5:5-78
 12        android:glEsVersion="0x00020000"
-12-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:5:19-51
+12-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:5:19-51
 13        android:required="true" />
-13-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:5:52-75
+13-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:5:52-75
 14
 15    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-15-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:6:5-76
-15-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:6:22-74
+15-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:6:5-76
+15-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:6:22-74
 16    <uses-permission android:name="android.permission.READ_SMS" />
-16-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:7:5-67
-16-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:7:22-64
+16-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:7:5-67
+16-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:7:22-64
 17    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-17-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:8:5-70
-17-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:8:22-67
+17-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:8:5-70
+17-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:8:22-67
 18    <uses-permission android:name="android.permission.SEND_SMS" />
-18-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:9:5-67
-18-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:9:22-64
+18-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:9:5-67
+18-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:9:22-64
 19    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-19-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:10:5-75
-19-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:10:22-72
+19-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:10:5-75
+19-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:10:22-72
 20
 21    <permission
 21-->[androidx.core:core:1.9.0] /home/matej/.gradle/caches/transforms-3/d53e7a873ba907dea2c671d6f503a427/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
@@ -45,80 +45,80 @@
 25-->[androidx.core:core:1.9.0] /home/matej/.gradle/caches/transforms-3/d53e7a873ba907dea2c671d6f503a427/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 26
 27    <application
-27-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:12:5-49:19
+27-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:12:5-49:19
 28        android:allowBackup="false"
-28-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:14:9-36
+28-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:14:9-36
 29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 29-->[androidx.core:core:1.9.0] /home/matej/.gradle/caches/transforms-3/d53e7a873ba907dea2c671d6f503a427/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 30        android:debuggable="true"
 31        android:enableOnBackInvokedCallback="true"
-31-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:13:9-51
+31-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:13:9-51
 32        android:extractNativeLibs="false"
 33        android:fullBackupContent="false"
-33-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:15:9-42
+33-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:15:9-42
 34        android:icon="@mipmap/ic_launcher"
-34-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:16:9-43
+34-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:16:9-43
 35        android:label="@string/app_name"
-35-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:17:9-41
+35-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:17:9-41
 36        android:supportsRtl="true"
-36-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:18:9-35
+36-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:18:9-35
 37        android:theme="@style/AppTheme" >
-37-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:19:9-40
+37-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:19:9-40
 38        <activity
-38-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:20:9-28:20
+38-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:20:9-28:20
 39            android:name="com.itds.sms.ping.MainActivity"
-39-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:20:19-47
+39-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:20:19-47
 40            android:exported="true" >
-40-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:20:48-71
+40-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:20:48-71
 41            <intent-filter>
-41-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:22:13-27:29
+41-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:22:13-27:29
 42                <action android:name="android.intent.action.MAIN" />
-42-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:23:17-69
-42-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:23:25-66
+42-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:23:17-69
+42-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:23:25-66
 43                <action android:name="android.intent.action.VIEW" />
-43-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:24:17-69
-43-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:24:25-66
+43-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:24:17-69
+43-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:24:25-66
 44
 45                <category android:name="android.intent.category.LAUNCHER" />
-45-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:26:17-77
-45-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:26:27-74
+45-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:26:17-77
+45-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:26:27-74
 46            </intent-filter>
 47        </activity>
 48        <activity
-48-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:29:9-36:20
+48-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:29:9-36:20
 49            android:name="com.itds.sms.ping.StoreActivity"
-49-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:30:13-42
+49-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:30:13-42
 50            android:parentActivityName="com.itds.sms.ping.MainActivity" >
-50-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:31:13-55
+50-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:31:13-55
 51            <meta-data
-51-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:33:13-35:49
+51-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:33:13-35:49
 52                android:name="android.support.PARENT_ACTIVITY"
-52-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:34:17-63
+52-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:34:17-63
 53                android:value=".MainActivity" />
-53-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:35:17-46
+53-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:35:17-46
 54        </activity>
 55
 56        <receiver
-56-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:38:9-48:20
+56-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:38:9-48:20
 57            android:name="com.itds.sms.ping.PingSmsReceiver"
-57-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:39:13-44
+57-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:39:13-44
 58            android:enabled="true"
-58-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:40:13-35
+58-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:40:13-35
 59            android:exported="true" >
-59-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:41:13-36
+59-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:41:13-36
 60            <intent-filter android:priority="10" >
-60-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:42:13-47:29
-60-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:42:28-49
+60-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:42:13-47:29
+60-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:42:28-49
 61                <action android:name="android.intent.action.DATA_SMS_RECEIVED" />
-61-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:43:17-82
-61-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:43:25-79
+61-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:43:17-82
+61-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:43:25-79
 62
 63                <data
-63-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:44:17-46:44
+63-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:44:17-46:44
 64                    android:host="*"
-64-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:45:21-37
+64-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:45:21-37
 65                    android:scheme="sms" />
-65-->/home/matej/silent_sms/silent-sms-ping-master/app/src/main/AndroidManifest.xml:46:21-41
+65-->/home/matej/silent-sms-ping/app/src/main/AndroidManifest.xml:46:21-41
 66            </intent-filter>
 67        </receiver>
 68

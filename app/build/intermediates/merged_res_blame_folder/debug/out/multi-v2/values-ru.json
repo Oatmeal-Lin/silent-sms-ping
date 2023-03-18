@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/matej/silent_sms/silent-sms-ping-master/app/src/main/res/values-ru/strings.xml",
+                    "source": "/home/matej/silent-sms-ping/app/src/main/res/values-ru/strings.xml",
                     "from": {
                         "startLines": "1,4,7,5,3,8,9,12,2,6,11,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
