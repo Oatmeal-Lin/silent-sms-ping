@@ -31,4 +31,4 @@ The project is licensed under the [GNU General Public License version 3 (or newe
 
 ### APK download (for testing)
 
-[debug APK](https://github.com/MatejKovacic/silent-sms-ping/blob/master/app/build/outputs/apk/debug/app-debug.apk) - click download to get it on your device.
+- [debug APK from 19-03-2023](https://github.com/MatejKovacic/silent-sms-ping/blob/master/silent-sms-app-debug.apk) - click download to get it on your device.
