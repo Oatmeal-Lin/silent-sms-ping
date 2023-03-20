@@ -18,7 +18,7 @@ This application is running on new Android devices and does not require rooted d
 
 ### New development and design
 
-The original application has not been maintained for several years. Currently new development of the application is ongoing. In the first stage we have updated SDK (to version 31) and Java (to version 11). In the second stage we will design new outlook of the application. In the third stage some new functionality will be added.
+The original application has not been maintained for several years. Currently new development of the application is ongoing. In the first stage we have updated SDK (to version 33) and Java (to version 11). In the second stage we will design new outlook of the application. In the third stage some new functionality will be added.
 
 Developers and designers:
 - [Jure Poljšak](https://github.com/barracuda-fsh)
