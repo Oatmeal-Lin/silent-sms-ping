@@ -31,7 +31,6 @@ import java.util.Locale;
 
 import static com.itds.sms.ping.MainActivity.PREF_DATA_SMS_STORE;
 
-import android.content.Intent;
 
 public class StoreActivity extends AppCompatActivity {
 

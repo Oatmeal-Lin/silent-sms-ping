@@ -144,6 +144,8 @@ public final class MainActivity extends AppCompatActivity {
         int sendSmsPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
         int readPhonePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
         int receiveSmsPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS);
+        int postNotificationPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS);
+
 
         if (sendSmsPermission != PackageManager.PERMISSION_GRANTED) {
             missingPermissions.add(Manifest.permission.SEND_SMS);
@@ -156,6 +158,11 @@ public final class MainActivity extends AppCompatActivity {
         if (receiveSmsPermission != PackageManager.PERMISSION_GRANTED && preferences.getBoolean(PREF_RECEIVE_DATA_SMS, false)) {
             missingPermissions.add(Manifest.permission.RECEIVE_SMS);
         }
+
+        if (postNotificationPermission != PackageManager.PERMISSION_GRANTED) {
+            missingPermissions.add(Manifest.permission.POST_NOTIFICATIONS);
+        }
+
 
         if (!missingPermissions.isEmpty()) {
             ActivityCompat.requestPermissions(this, missingPermissions.toArray(new String[0]), 1);
