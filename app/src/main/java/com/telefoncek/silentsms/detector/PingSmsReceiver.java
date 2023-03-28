@@ -62,7 +62,7 @@ public class PingSmsReceiver extends BroadcastReceiver {
 
         Intent intent = new Intent(context, StoreActivity.class);
         // Send data to NotificationView Class
-        intent.putExtra("title", "Binary SMS Received");
+        intent.putExtra("title", "Silent SMS detected!");
         intent.putExtra("text", message);
         // Open NotificationView.java Activity
         PendingIntent pIntent = PendingIntent.getActivity(context, 0, intent,
@@ -76,7 +76,7 @@ public class PingSmsReceiver extends BroadcastReceiver {
                 // Set Ticker Message
                 .setTicker(message)
                 // Set Title
-                .setContentTitle("Binary SMS Received")
+                .setContentTitle("Silent SMS detected!")
                 // Set Text
                 .setContentText(message)
                 // Add an Action Button below Notification
@@ -89,7 +89,7 @@ public class PingSmsReceiver extends BroadcastReceiver {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "com.telefoncek.silentsms.detector", NotificationManager.IMPORTANCE_HIGH);
             // Configure the notification channel.
-            mChannel.setDescription("Data SMS Received Notifications");
+            mChannel.setDescription("Silent SMS detector notifications");
             mChannel.enableLights(true);
             mChannel.setLightColor(Color.RED);
             mChannel.enableVibration(true);
