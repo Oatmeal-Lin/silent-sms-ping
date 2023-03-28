@@ -1,7 +1,0 @@
-com.itds.sms.ping.test.app-androidTest-0 /home/honda/silent-sms-ping-master/app/build/generated/res/resValues/androidTest/debug
-com.itds.sms.ping.test.app-androidTest-1 /home/honda/silent-sms-ping-master/app/build/generated/res/rs/androidTest/debug
-com.itds.sms.ping.test.app-mergeDebugAndroidTestResources-2 /home/honda/silent-sms-ping-master/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
-com.itds.sms.ping.test.app-mergeDebugAndroidTestResources-3 /home/honda/silent-sms-ping-master/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
-com.itds.sms.ping.test.app-merged_res-4 /home/honda/silent-sms-ping-master/app/build/intermediates/merged_res/debugAndroidTest
-com.itds.sms.ping.test.app-androidTest-5 /home/honda/silent-sms-ping-master/app/src/androidTest/res
-com.itds.sms.ping.test.app-androidTestDebug-6 /home/honda/silent-sms-ping-master/app/src/androidTestDebug/res
