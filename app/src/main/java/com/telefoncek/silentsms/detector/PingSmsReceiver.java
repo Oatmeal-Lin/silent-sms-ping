@@ -76,7 +76,7 @@ public class PingSmsReceiver extends BroadcastReceiver {
 
         Intent intent = new Intent(context, StoreActivity.class);
         // Send data to NotificationView Class
-        intent.putExtra("title", "Binary SMS Received");
+        intent.putExtra("title", "Silent SMS detected!");
         intent.putExtra("text", message);
         // Open NotificationView.java Activity
         PendingIntent pIntent = PendingIntent.getActivity(context, 0, intent,
@@ -93,11 +93,11 @@ public class PingSmsReceiver extends BroadcastReceiver {
                 // Set Ticker Message
                 .setTicker(message)
                 // Set Title
-                .setContentTitle("Binary SMS Received")
+                .setContentTitle("Silent SMS detected!")
                 // Set Text
                 .setContentText("Silent SMS has been received from: "+phone_number)
                 // Add an Action Button below Notification
-                .addAction(R.mipmap.ic_launcher, "Open SMS Ping", pIntent)
+                .addAction(R.mipmap.ic_launcher, "Open Silent SMS Detector", pIntent)
                 // Set PendingIntent into Notification
                 .setContentIntent(pIntent)
                 // Dismiss Notification
