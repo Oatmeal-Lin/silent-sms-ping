@@ -14,7 +14,11 @@ Silent SMS messages are often used by law enforcement agencies for surveillance 
 
 This application, which is a fork of [Android Silent SMS Ping](https://github.com/itds-consulting/android-silent-ping-sms), can send silent SMS messages and determine if a target phone is online or offline. But it can also detect received silent SMS messages and alert user that he has received silent SMS.
 
+<img src="notification1.jpg" alt="Silent SMS notification" width="300"/>
+
 The future version will also implement data collection for threat analytics. Stay tuned and check out the issues!
+
+<img src="notification2.jpg" alt="Silent SMS detector" width="80"/>
 
 This application is running on new Android devices and does not require rooted device.
 
@@ -26,6 +30,7 @@ Developers and designers:
 - [Jure Poljšak](https://github.com/barracuda-fsh)
 - [Matej Kovačič](https://github.com/MatejKovacic)
 - Vesna Trenchovska
+
 
 ### License
 
