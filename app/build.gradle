@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.itds.sms.ping"
+        applicationId 'com.telefoncek.silentsms.detector'
         minSdkVersion 31
         targetSdkVersion 33
         versionCode 6

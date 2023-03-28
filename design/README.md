@@ -34,7 +34,7 @@ Press on a history record opens a screen that shows message details:
 
 ### Notification
 Notification contains:
-- title: "Silent SMS ping - {time of notification}"
+- title: "Silent SMS detector - {time of notification}"
 - text "Silent SMS has been detected! \n Received from: {number/unknown} \n Detected at {date and time}"
 - "VIEW" button to open application.
 

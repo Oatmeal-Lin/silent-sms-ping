@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SMS Ping</string>
+    <string name="app_name">Silent SMS detector</string>
     <string name="send">Pošlji</string>
     <string name="phonenumber">+386</string>
     <string name="delivered">Dostavljeno: telefon je vključen</string>
