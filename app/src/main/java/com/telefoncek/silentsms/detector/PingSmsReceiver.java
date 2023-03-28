@@ -12,6 +12,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Telephony;
 import androidx.core.app.NotificationCompat;
+
+import android.telephony.SmsMessage;
 import android.util.Log;
 
 import static com.telefoncek.silentsms.detector.MainActivity.PREF_DATA_SMS_STORE;
@@ -35,6 +37,7 @@ public class PingSmsReceiver extends BroadcastReceiver {
             return;
         }
         Object[] PDUs = (Object[]) bundle.get("pdus");
+        String format = bundle.getString("format");
         Log.d(TAG, "Received " + (PDUs != null ? PDUs.length : 0) + " messages");
 
         int counter = 0;
@@ -47,11 +50,22 @@ public class PingSmsReceiver extends BroadcastReceiver {
             String storeString = preferences.getString(PREF_DATA_SMS_STORE, "");
             storeString += sb.toString() + ",";
             preferences.edit().putString(PREF_DATA_SMS_STORE, storeString).apply();
-            Notification(context, sb.toString());
+            Notification(context, sb.toString(), format);
         }
     }
-
-    public void Notification(Context context, String message) {
+    public byte[] pduHexToByteArray(String PDU) {
+        if (PDU.length() % 2 != 0) {
+            Log.e(TAG, "wrong number of bytes to pduHexToByteArray");
+            return new byte[0];
+        }
+        byte[] converted = new byte[PDU.length() / 2];
+        for (int i = 0; i < (PDU.length() / 2); i++) {
+            converted[i] = (byte) ((Character.digit(PDU.charAt(i * 2), 16) << 4)
+                    + Character.digit(PDU.charAt((i * 2) + 1), 16));
+        }
+        return converted;
+    }
+    public void Notification(Context context, String message, String format) {
         // Create Notification Manager
         NotificationManager notificationmanager = (NotificationManager) context
                 .getSystemService(Context.NOTIFICATION_SERVICE);
@@ -62,11 +76,14 @@ public class PingSmsReceiver extends BroadcastReceiver {
 
         Intent intent = new Intent(context, StoreActivity.class);
         // Send data to NotificationView Class
-        intent.putExtra("title", "Silent SMS detected!");
+        intent.putExtra("title", "Binary SMS Received");
         intent.putExtra("text", message);
         // Open NotificationView.java Activity
         PendingIntent pIntent = PendingIntent.getActivity(context, 0, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_MUTABLE);
+
+        SmsMessage sms = SmsMessage.createFromPdu(pduHexToByteArray(message), format);
+        String phone_number = sms.getOriginatingAddress();
 
         // Create Notification using NotificationCompat.Builder
         NotificationCompat.Builder builder = new NotificationCompat.Builder(
@@ -76,11 +93,11 @@ public class PingSmsReceiver extends BroadcastReceiver {
                 // Set Ticker Message
                 .setTicker(message)
                 // Set Title
-                .setContentTitle("Silent SMS detected!")
+                .setContentTitle("Binary SMS Received")
                 // Set Text
-                .setContentText(message)
+                .setContentText("Silent SMS has been received from: "+phone_number)
                 // Add an Action Button below Notification
-                .addAction(R.mipmap.ic_launcher, "Open Silent SMS detector", pIntent)
+                .addAction(R.mipmap.ic_launcher, "Open SMS Ping", pIntent)
                 // Set PendingIntent into Notification
                 .setContentIntent(pIntent)
                 // Dismiss Notification
