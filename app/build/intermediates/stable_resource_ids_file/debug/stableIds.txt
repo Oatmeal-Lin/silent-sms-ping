@@ -25,6 +25,7 @@ com.itds.sms.ping:style/Widget.AppCompat.Spinner = 0x7f0e0155
 com.itds.sms.ping:style/Widget.AppCompat.SeekBar = 0x7f0e0153
 com.itds.sms.ping:style/Widget.AppCompat.SearchView = 0x7f0e0151
 com.itds.sms.ping:style/Widget.AppCompat.RatingBar.Small = 0x7f0e0150
+com.itds.sms.ping:xml/data_extraction_rules = 0x7f100000
 com.itds.sms.ping:style/Widget.AppCompat.RatingBar = 0x7f0e014e
 com.itds.sms.ping:style/Widget.AppCompat.ProgressBar.Horizontal = 0x7f0e014d
 com.itds.sms.ping:style/Widget.AppCompat.PopupWindow = 0x7f0e014b
