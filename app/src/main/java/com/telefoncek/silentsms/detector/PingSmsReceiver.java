@@ -97,7 +97,7 @@ public class PingSmsReceiver extends BroadcastReceiver {
                 // Set Text
                 .setContentText("Silent SMS has been received from: "+phone_number)
                 // Add an Action Button below Notification
-                .addAction(R.mipmap.ic_launcher, "Open Silent SMS Detector", pIntent)
+                .addAction(R.mipmap.ic_launcher, "Open Silent SMS detector", pIntent)
                 // Set PendingIntent into Notification
                 .setContentIntent(pIntent)
                 // Dismiss Notification
