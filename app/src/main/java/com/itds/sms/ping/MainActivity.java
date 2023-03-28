@@ -182,6 +182,14 @@ public final class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        String ns = Context.NOTIFICATION_SERVICE;
+        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancelAll();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         registerReceiver(br, sentFilter);
@@ -189,8 +197,6 @@ public final class MainActivity extends AppCompatActivity {
         registerReceiver(br, wapDeliveryFilter);
         String ns = Context.NOTIFICATION_SERVICE;
         NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-        //NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
-        //NotificationManager nMgr = (NotificationManager) this.getSystemService(ns);
         notificationManager.cancelAll();
     }
 
