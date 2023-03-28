@@ -1,6 +1,7 @@
 package com.itds.sms.ping;
 
 import android.Manifest;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -186,6 +187,11 @@ public final class MainActivity extends AppCompatActivity {
         registerReceiver(br, sentFilter);
         registerReceiver(br, deliveryFilter);
         registerReceiver(br, wapDeliveryFilter);
+        String ns = Context.NOTIFICATION_SERVICE;
+        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        //NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
+        //NotificationManager nMgr = (NotificationManager) this.getSystemService(ns);
+        notificationManager.cancelAll();
     }
 
     @Override
