@@ -12,9 +12,31 @@ By sending silent SMS on a target phone, a sender can detect whether mobile phon
 
 However, silent SMS **could also be used to determine the location of the target mobile device**. When a silent SMS is sent to the target device, it forces it to reveal its location, because it makes a connection to the nearest (available) serving base station in cellular network. In that case silent SMS messages could be used by law enforcement agencies for surveillance and tracking purposes, because they allow them to locate the position of a mobile phone without alerting the user. It is known that in the past, [German police has been using silent SMSes to track the suspects](https://edri.org/our-work/edrigramnumber10-2silent-sms-tracking-suspects/).
 
+### SMS message types
+
+There are several types of SMS messages, but the application *Silent SMS detector* can detect only certain types.
+
+- **Class 0 SMS**
+This message is displayed on the mobile phone immediately and a message delivery report is sent back to the sender. The message does not have to be saved in the mobile phone or on the SIM card (unless selected to do so by the mobile user). This type is also referred to as *Flash SMS*. Certain parameters for this SMS type results in the message not being displayed on the phone (and not saved on the phone), but the sender still receives a receipt. In that case *Class-0* message serves as silent SMS message. *Silent SMS detector* application can detect these messages.
+
+- **Class 1 SMS**
+This is a normal SMS message. This message is stored in the memory of the mobile phone or the SIM card (depending on memory availability).
+
+- **Class 2 SMS**
+This type of message carries SIM card data. The SIM card data must be successfully transferred prior to sending acknowledgment to the sender (usually operator). An error message is sent to the sender if this transmission is not possible. Usually it is used for sending some technical data from the mobile operator to a SIM card. The receipt means that the data has been successfully transferred to the SIM card.
+
+- **Class 3 SMS**
+These are normal SMS messages that are forwarded from the receiving entity to an external device. The delivery acknowledgment is sent to the sender regardless of whether or not the message was forwarded to the external device. 
+
+- **Type 0 SMS**
+These are true silent SMS messages that do not show any notification on the phone, but return a delivery receipt to the sender. The `TP_PID` field in these messages is set to the value `0x40`. The purpose of the message is exclusively one - tracking users.
+In May 2010, Google [made a change in the Android code](https://android-review.googlesource.com/c/platform/frameworks/base/+/14069) to keep Type-0 SMS messages completely hidden. This means that these messages do not appear anywhere, are not saved on the phone and do not show any notification to the recipient. In theory, it would be possible to detect these messages by changing the Android code. However, [research has shown](https://akaki.io/2022/transmission_and_detection_of_silent_sms_in_android) that receiving a Type-0 message in Android logs triggers a record (`GsmInboundSmsHandler: Received short message type 0, do not display or store. Send ACK.`). Unfortunately, this requires rooted Android device.
+The application *Silent SMS detector* cannot detect these messages.
+
+
 ## What is this application doing (and *what not*)?
 
-This application, which is a fork of [Android Silent SMS Ping](https://github.com/itds-consulting/android-silent-ping-sms), can send silent SMS messages to determine if a target SIM card (phone number) is active or not. It can also detect received silent SMS messages and alert user that he has received silent SMS.
+This application, which is a fork of [Android Silent SMS Ping](https://github.com/itds-consulting/android-silent-ping-sms), can send silent SMS messages to determine if a target SIM card (phone number) is active or not. It can also detect received silent SMS messages and alert user that he has received silent SMS. However, iti is handling only *Class 0* SME messages and not *Type 0* SMS messages.
 
 The application is running on new Android devices and does not require rooted device.
 
@@ -42,7 +64,7 @@ Currently application is fully working (you can install it from APK below or com
 
 So in the second stage we plan to implement new design of the application. Later some new functionalities will be added. Specifically, we would like to implement data collection for threat analytics in order to collect the data about silent SMS messages and get some data which could help us estimate the scope of the problem. Stay tuned and check out the issues!
 
-Application is now being developed by [Jure Poljšak](https://github.com/barracuda-fsh) (programming), [Matej Kovačič](https://github.com/MatejKovacic) (architecture) and Vesna Trenchovska (design).
+Application is now being developed by [Jure Poljšak](https://github.com/barracuda-fsh) (programming), [Matej Kovačič](https://github.com/MatejKovacic) (architecture and a little bit pf programming) and Vesna Trenchovska (design).
 
 ### License
 
