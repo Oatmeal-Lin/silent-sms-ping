@@ -14,7 +14,7 @@ However, silent SMS **could also be used to determine the location of the target
 
 ### SMS message types
 
-There are several types of SMS messages, but the application *Silent SMS detector* can detect only certain type of them - *Class-0* SMS messages with a specific flags.
+There are several types of SMS messages. The SMS standard define a number of *binary SMS messages* that are typically send to the SIM card instead of the user. Each of these can be considered a silent SMS. However, our application *Silent SMS detector* can detect only certain type of them - *Class-0* SMS messages.
 
 - **Class 0 SMS**
 This message is displayed on the mobile phone immediately and a message delivery report is sent back to the sender. The message does not have to be saved in the mobile phone or on the SIM card (unless selected to do so by the mobile user). This type is also referred to as *Flash SMS*. Certain parameters (flags) for this SMS type results in the message not being displayed on the phone (and not saved on the phone), but the sender still receives a receipt. In that case *Class-0* message serves as silent SMS message. *Silent SMS detector* application can detect **only these (binary) messages**.
