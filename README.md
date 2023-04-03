@@ -1,6 +1,6 @@
 # Silent SMS detector
 
-Android application for detecting (and sending) silent SMS messages that does not require rooted device.
+Android application for detecting (and sending) *Class-0* silent SMS messages that does not require rooted device.
 
 ## What is silent SMS?
 
@@ -14,10 +14,10 @@ However, silent SMS **could also be used to determine the location of the target
 
 ### SMS message types
 
-There are several types of SMS messages, but the application *Silent SMS detector* can detect only certain types.
+There are several types of SMS messages, but the application *Silent SMS detector* can detect only certain type of them - *Class-0* SMS messages with a specific flags.
 
 - **Class 0 SMS**
-This message is displayed on the mobile phone immediately and a message delivery report is sent back to the sender. The message does not have to be saved in the mobile phone or on the SIM card (unless selected to do so by the mobile user). This type is also referred to as *Flash SMS*. Certain parameters for this SMS type results in the message not being displayed on the phone (and not saved on the phone), but the sender still receives a receipt. In that case *Class-0* message serves as silent SMS message. *Silent SMS detector* application can detect these messages.
+This message is displayed on the mobile phone immediately and a message delivery report is sent back to the sender. The message does not have to be saved in the mobile phone or on the SIM card (unless selected to do so by the mobile user). This type is also referred to as *Flash SMS*. Certain parameters (flags) for this SMS type results in the message not being displayed on the phone (and not saved on the phone), but the sender still receives a receipt. In that case *Class-0* message serves as silent SMS message. *Silent SMS detector* application can detect **only these messages**.
 
 - **Class 1 SMS**
 This is a normal SMS message. This message is stored in the memory of the mobile phone or the SIM card (depending on memory availability).
@@ -29,28 +29,29 @@ This type of message carries SIM card data. The SIM card data must be successful
 These are normal SMS messages that are forwarded from the receiving entity to an external device. The delivery acknowledgment is sent to the sender regardless of whether or not the message was forwarded to the external device. 
 
 - **Type 0 SMS**
-These are true silent SMS messages that do not show any notification on the phone, but return a delivery receipt to the sender. The `TP_PID` field in these messages is set to the value `0x40`. The purpose of the message is exclusively one - tracking users.
-In May 2010, Google [made a change in the Android code](https://android-review.googlesource.com/c/platform/frameworks/base/+/14069) to keep Type-0 SMS messages completely hidden. This means that these messages do not appear anywhere, are not saved on the phone and do not show any notification to the recipient. In theory, it would be possible to detect these messages by changing the Android code. However, [research has shown](https://akaki.io/2022/transmission_and_detection_of_silent_sms_in_android) that receiving a Type-0 message in Android logs triggers a record (`GsmInboundSmsHandler: Received short message type 0, do not display or store. Send ACK.`). Unfortunately, this requires rooted Android device.
-The application *Silent SMS detector* cannot detect these messages.
+These are true silent SMS messages that do not show any notification on the phone, but return a delivery receipt to the sender. The `TP_PID` field in these messages is set to the value `0x40`. The purpose of the message is exclusively one - tracking users. The application *Silent SMS detector* **cannot detect these messages**.
 
+In May 2010, Google [made a change in the Android code](https://android-review.googlesource.com/c/platform/frameworks/base/+/14069) to keep Type-0 SMS messages completely hidden. This means that these messages do not appear anywhere, are not saved on the phone and do not show any notification to the recipient. In theory, it would be possible to detect these messages by changing the Android code, however this would likely mean that your Android device is not compliant to mobile stadards. However, [research has shown](https://akaki.io/2022/transmission_and_detection_of_silent_sms_in_android) that receiving a Type-0 message triggers a record in Android logs (`GsmInboundSmsHandler: Received short message type 0, do not display or store. Send ACK.`). Unfortunately, this requires rooted Android device. As mentioned, the application *Silent SMS detector* cannot detect these messages.
 
 ## What is this application doing (and *what not*)?
 
-This application, which is a fork of [Android Silent SMS Ping](https://github.com/itds-consulting/android-silent-ping-sms), can send silent SMS messages to determine if a target SIM card (phone number) is active or not. It can also detect received silent SMS messages and alert user that he has received silent SMS. However, iti is handling only *Class 0* SME messages and not *Type 0* SMS messages.
+This application, which is a fork of [Android Silent SMS Ping](https://github.com/itds-consulting/android-silent-ping-sms), can send silent SMS messages to determine if a target SIM card (phone number) is active or not. It can also detect received silent SMS messages and alert user that he received silent SMS. However, it is handling only *Class 0* SME messages and not *Type 0* SMS messages.
 
 The application is running on new Android devices and does not require rooted device.
 
 <img src="notification1.jpg" alt="Silent SMS notification" width="300"/>
 
-It is important to understand, that receiving silent SMS **does not necessary mean you are being targeted by some malicious actor**. Silent SMS messages could be used for various technical reasons and receiving a silent SMS is not a good indicator of being targeted by your cell carrier, government or hackers.
+It is important to understand, that receiving silent SMS **does not necessary mean you are being targeted by some malicious actor**. Silent SMS messages could be used for various technical reasons and receiving a silent SMS is not a good indicator of being targeted by your cell carrier, government or hackers. For instance, silent SMS messages could be sent to your SIM card for **roaming purposes**. On most of the SIM cards, there are fields defining preferred networks. The operator controlled PLMN list (Public land mobile network), so called OPLMN, is often updated by the home network operator over the air (OTA). This happens usually whenever you enter a new country. In that case binary SMS will be sent to your phone and *Silent SMS detector* will detect that SMS. However that does not means you are being tracked or that some bad thing is happening.
 
-On the other side, there are several other possibilities of tracking, so **the fact that you did not receive silent SMS does not means you are not being tracked**. If you want to avoid tracking, you should turn on the airplane mode (or switch your mobile phone off).
+On the other side, there are several other possibilities of mobile users tracking, so **the fact that you did not receive silent SMS does not means you are not being tracked**. If you want to avoid tracking, you should turn on the airplane mode (or switch your mobile phone off), but this of course heavily degrades user experience, so it is not really practical.
+
+Oh, and BTW, did you know that your SIM card can be sending SMS messages without your knowledge? In 2021 David Allen Burgess found out that SIM cards can send data off your phone [without you or your phone's operating system knowing](https://www.youtube.com/watch?v=0Em-J_3QYu4). There is no public documentation about these messages, you can not see them and the mobile operators won't talk about it. In the investigated case, [Burgess found out](https://medium.com/telecom-expert/what-is-at-t-doing-at-1111340002-c418876c212c) that SIM card has been sending different data, including IMEI number of the current phone and IMEI number of the **previous phone** where SIM card has been inserted! So there are several things happening "behind the scenes" that users usually do not know about.
 
 <img src="notification2.jpg" alt="Silent SMS detector" width="80"/>
 
-**So notification that you received silent SMS message does not necessarily means something bad is happening, and absence of this notification does not means that you are safe.**
+**Anyway, notification that you received silent SMS message does not necessarily means something bad is happening, and absence of this notification does not means that you are safe from tracking.**
 
-However, if you want to have greater transparency of what is happening "behind the scenes", *Silent SMS detector* could be interesting application. Because silent SMSes are meant to stay hidden from you, and with this application you can detect them. *Isn't that cool?*
+However, if you want to have greater transparency of what is happening "behind the scenes", *Silent SMS detector* could be interesting application. Because silent SMSes are meant to stay hidden from you, and with this application you can detect some of them. *Isn't that cool?*
 
 ### History
 
