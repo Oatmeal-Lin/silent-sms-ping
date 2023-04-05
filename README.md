@@ -65,7 +65,7 @@ Currently application is fully working (you can install it from APK below or com
 
 So in the second stage we plan to implement new design of the application. Later some new functionalities will be added. Specifically, we would like to implement data collection for threat analytics in order to collect the data about silent SMS messages and get some data which could help us estimate the scope of the problem. Stay tuned and check out the issues!
 
-Application is now being developed by [Jure Poljšak](https://github.com/barracuda-fsh) (programming), [Matej Kovačič](https://github.com/MatejKovacic) (architecture and a little bit pf programming) and Vesna Trenchovska (design).
+Application is now being developed by [Jure Poljšak](https://github.com/barracuda-fsh) (programming), [Matej Kovačič](https://github.com/MatejKovacic) (architecture and a little bit of programming) and Vesna Trenchovska (design).
 
 ### License
 
