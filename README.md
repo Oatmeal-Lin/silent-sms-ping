@@ -75,7 +75,7 @@ The project is licensed under the [GNU General Public License version 3 (or newe
 
 Since this application is under heavy development, you can not install this application from Play store yet.
 
-But you can download [testing APK from 28-03-2023](https://github.com/MatejKovacic/silent-sms-ping/blob/master/silent-sms-app-debug_28-03-2023.apk) and install it on your device. Click download button to get it on your device and then you can install APK directly. Please note that on your Android device you should allow installing unknown apps in that case, because APK is not digitally signed.
+But you can download [testing APK from 06-04-2023](https://github.com/MatejKovacic/silent-sms-ping/blob/master/silent-sms-app-debug_06-04-2023.apk) and install it on your device. Click download button to get it on your device and then you can install APK directly. Please note that on your Android device you should allow installing unknown apps in that case, because APK is not digitally signed.
 
 Another option is to clone this repository on your computer, install *Android Studio*, compile an app by yourself, and install it directly to your Android device.
 
