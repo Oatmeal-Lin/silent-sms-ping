@@ -29,9 +29,11 @@ public class PingSmsReceiver extends BroadcastReceiver {
             return;
         }
         SharedPreferences preferences = context.getSharedPreferences(PREF_DATA_SMS_STORE, Context.MODE_PRIVATE);
+        /*
         if (!context.getSharedPreferences("MainActivity", Context.MODE_PRIVATE).getBoolean(MainActivity.PREF_RECEIVE_DATA_SMS, false)) {
             return;
         }
+        */
         Bundle bundle = intent.getExtras();
         if (bundle == null) {
             return;

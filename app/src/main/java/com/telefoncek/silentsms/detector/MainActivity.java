@@ -61,14 +61,14 @@ public final class MainActivity extends AppCompatActivity {
     MenuItem clearHistory;
     public final static int MENU_ITEM_CLEAR_HISTORY = 998;
     MenuItem receiveDataSms;
-    public final static int MENU_ITEM_RECEIVE_DATA_SMS = 997;
+    //public final static int MENU_ITEM_RECEIVE_DATA_SMS = 997;
     MenuItem receivedStorage;
     public final static int MENU_ITEM_RECEIVED_STORAGE = 996;
 
     SharedPreferences preferences;
     public final static String PREF_LAST_NUMBER = "pref_last_number";
     public final static String PREF_HISTORY = "pref_history";
-    public final static String PREF_RECEIVE_DATA_SMS = "pref_receive_data_sms";
+    //public final static String PREF_RECEIVE_DATA_SMS = "pref_receive_data_sms";
     public final static String PREF_DATA_SMS_STORE = "pref_data_sms_store";
 
     ArrayAdapter<String> historyAdapter;
@@ -156,7 +156,7 @@ public final class MainActivity extends AppCompatActivity {
             missingPermissions.add(Manifest.permission.READ_PHONE_STATE);
         }
 
-        if (receiveSmsPermission != PackageManager.PERMISSION_GRANTED && preferences.getBoolean(PREF_RECEIVE_DATA_SMS, false)) {
+        if (receiveSmsPermission != PackageManager.PERMISSION_GRANTED) {
             missingPermissions.add(Manifest.permission.RECEIVE_SMS);
         }
 
@@ -218,11 +218,14 @@ public final class MainActivity extends AppCompatActivity {
             clearHistory = menu.add(Menu.NONE, MENU_ITEM_CLEAR_HISTORY, Menu.NONE, "Clear history")
                     .setIcon(android.R.drawable.ic_menu_close_clear_cancel).setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         }
+        /*
         receiveDataSms = menu.findItem(MENU_ITEM_RECEIVE_DATA_SMS);
         if (receiveDataSms == null) {
             receiveDataSms = menu.add(Menu.NONE, MENU_ITEM_RECEIVE_DATA_SMS, Menu.NONE, "Receive Ping (Data) Messages")
                     .setCheckable(true).setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         }
+
+         */
         receivedStorage = menu.findItem(MENU_ITEM_RECEIVED_STORAGE);
         if (receivedStorage == null) {
             receivedStorage = menu.add(Menu.NONE, MENU_ITEM_RECEIVED_STORAGE, Menu.NONE, "Data Messages Storage")
@@ -233,9 +236,12 @@ public final class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
+        /*
         if (receiveDataSms != null) {
             receiveDataSms.setChecked(preferences.getBoolean(PREF_RECEIVE_DATA_SMS, false));
         }
+
+         */
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -248,6 +254,7 @@ public final class MainActivity extends AppCompatActivity {
             case MENU_ITEM_CLEAR_HISTORY:
                 clearHistory();
                 return true;
+                /*
             case MENU_ITEM_RECEIVE_DATA_SMS:
                 boolean newVal = !preferences.getBoolean(PREF_RECEIVE_DATA_SMS, false);
                 preferences.edit().putBoolean(PREF_RECEIVE_DATA_SMS, newVal).apply();
@@ -255,6 +262,8 @@ public final class MainActivity extends AppCompatActivity {
                     checkPermissions();
                 }
                 return true;
+
+                 */
             case MENU_ITEM_RECEIVED_STORAGE:
                 startActivity(new Intent(this, StoreActivity.class));
                 return true;
