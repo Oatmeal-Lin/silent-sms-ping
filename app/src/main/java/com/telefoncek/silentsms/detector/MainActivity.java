@@ -59,7 +59,7 @@ public final class MainActivity extends AppCompatActivity {
     MenuItem pickContact;
     public final static int MENU_ITEM_PICK_CONTACT = 999;
     MenuItem clearHistory;
-    public final static int MENU_ITEM_CLEAR_HISTORY = 998;
+    //public final static int MENU_ITEM_CLEAR_HISTORY = 998;
     MenuItem receiveDataSms;
     //public final static int MENU_ITEM_RECEIVE_DATA_SMS = 997;
     MenuItem receivedStorage;
@@ -211,37 +211,18 @@ public final class MainActivity extends AppCompatActivity {
         pickContact = menu.findItem(MENU_ITEM_PICK_CONTACT);
         if (pickContact == null) {
             pickContact = menu.add(Menu.NONE, MENU_ITEM_PICK_CONTACT, Menu.NONE, R.string.pick_contact)
-                    .setIcon(R.mipmap.ic_menu_invite).setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+                    .setIcon(R.drawable.ic_menu_invite).setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         }
-        clearHistory = menu.findItem(MENU_ITEM_CLEAR_HISTORY);
-        if (clearHistory == null) {
-            clearHistory = menu.add(Menu.NONE, MENU_ITEM_CLEAR_HISTORY, Menu.NONE, "Clear history")
-                    .setIcon(android.R.drawable.ic_menu_close_clear_cancel).setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-        }
-        /*
-        receiveDataSms = menu.findItem(MENU_ITEM_RECEIVE_DATA_SMS);
-        if (receiveDataSms == null) {
-            receiveDataSms = menu.add(Menu.NONE, MENU_ITEM_RECEIVE_DATA_SMS, Menu.NONE, "Receive Ping (Data) Messages")
-                    .setCheckable(true).setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-        }
-
-         */
         receivedStorage = menu.findItem(MENU_ITEM_RECEIVED_STORAGE);
         if (receivedStorage == null) {
             receivedStorage = menu.add(Menu.NONE, MENU_ITEM_RECEIVED_STORAGE, Menu.NONE, "Data Messages Storage")
-                    .setIcon(android.R.drawable.ic_menu_agenda).setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+                    .setIcon(R.drawable.silent_sms_ghost).setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         }
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        /*
-        if (receiveDataSms != null) {
-            receiveDataSms.setChecked(preferences.getBoolean(PREF_RECEIVE_DATA_SMS, false));
-        }
-
-         */
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -251,19 +232,6 @@ public final class MainActivity extends AppCompatActivity {
             case MENU_ITEM_PICK_CONTACT:
                 pickContact();
                 return true;
-            case MENU_ITEM_CLEAR_HISTORY:
-                clearHistory();
-                return true;
-                /*
-            case MENU_ITEM_RECEIVE_DATA_SMS:
-                boolean newVal = !preferences.getBoolean(PREF_RECEIVE_DATA_SMS, false);
-                preferences.edit().putBoolean(PREF_RECEIVE_DATA_SMS, newVal).apply();
-                if (newVal) {
-                    checkPermissions();
-                }
-                return true;
-
-                 */
             case MENU_ITEM_RECEIVED_STORAGE:
                 startActivity(new Intent(this, StoreActivity.class));
                 return true;

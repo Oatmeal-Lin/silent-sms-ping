@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Silent SMS detector</string>
-    <string name="send">SEND</string>
-    <string name="phonenumber">+420</string>
-    <string name="delivered">DELIVERED: PHONE ONLINE</string>
-    <string name="offline">DELIVERY FAILED: PHONE OFFLINE</string>
-    <string name="sent">THE REQUEST IS SENT …</string>
-    <string name="notsent">FAILED TO SEND REQUEST</string>
-    <string name="pick_contact">Pick Phone from Contacts</string>
+    <string name="send">Send</string>
+    <string name="phonenumber">+386</string>
+    <string name="delivered">DELIVERED: phone is online</string>
+    <string name="offline">DELIVERY FAILED: phone is offline</string>
+    <string name="sent">Silent ping has been sent...</string>
+    <string name="notsent">Failed to send silent ping</string>
+    <string name="pick_contact">Pick Phone from contacts</string>
     <string name="pick_contact_failed">Failed to select contact</string>
-    <string name="title_history">History:</string>
+    <string name="title_history">Sent silent SMS messages:</string>
     <string name="storage_description">Long-touch row to copy contents into clipboard</string>
     <string name="result_pdu_details">Result PDU details</string>
 </resources>

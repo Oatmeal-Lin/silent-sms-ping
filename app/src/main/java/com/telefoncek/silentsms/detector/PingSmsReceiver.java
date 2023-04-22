@@ -29,11 +29,6 @@ public class PingSmsReceiver extends BroadcastReceiver {
             return;
         }
         SharedPreferences preferences = context.getSharedPreferences(PREF_DATA_SMS_STORE, Context.MODE_PRIVATE);
-        /*
-        if (!context.getSharedPreferences("MainActivity", Context.MODE_PRIVATE).getBoolean(MainActivity.PREF_RECEIVE_DATA_SMS, false)) {
-            return;
-        }
-        */
         Bundle bundle = intent.getExtras();
         if (bundle == null) {
             return;
@@ -91,7 +86,7 @@ public class PingSmsReceiver extends BroadcastReceiver {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(
                 context, CHANNEL_ID)
                 // Set Icon
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.main_icon)
                 // Set Ticker Message
                 .setTicker(message)
                 // Set Title
@@ -99,7 +94,7 @@ public class PingSmsReceiver extends BroadcastReceiver {
                 // Set Text
                 .setContentText("Silent SMS has been received from: "+phone_number)
                 // Add an Action Button below Notification
-                .addAction(R.mipmap.ic_launcher, "Open Silent SMS detector", pIntent)
+                .addAction(R.drawable.main_icon, "Open Silent SMS detector", pIntent)
                 // Set PendingIntent into Notification
                 .setContentIntent(pIntent)
                 // Dismiss Notification
