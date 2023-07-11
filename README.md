@@ -80,6 +80,15 @@ Since this application is under heavy development, you can not install this appl
 
 But you can download [testing APK from 22-04-2023](https://github.com/MatejKovacic/silent-sms-ping/blob/master/silent-sms-app-debug_22-04-2023.apk) and install it on your device. Click download button to get it on your device and then you can install APK directly. Please note that on your Android device you should allow installing unknown apps in that case, because APK is not digitally signed.
 
+You can also check hash values of the `silent-sms-app-debug_22-04-2023.apk` file:
+- SHA512: `8293e381d6033a5c2cd152bd8e2cd3543fc856e84653c631bb0497b55a9f85759e7b63aa70ef81c27caad6f66c2e87e7c966f92af6a56113fd28fa7e12f6e674`
+- SHA256: `7a766747eade07251faccc7e53a75d13290eb187d721da74638c561316c16b8c`
+- MD5: `77d3492d893c0a38dc3b41ed09e174d8`
+
+But you have been warned. :)
+
 Another option is to clone this repository on your computer, install *Android Studio*, compile an app by yourself, and install it directly to your Android device.
+
+Please also note you need a faily new Android installed on yur phone.
 
 You are of course always welcome to inspect the source code of the application in order to check that it does not contain some malicious code. And you can also contribute your code or ideas to the project.
