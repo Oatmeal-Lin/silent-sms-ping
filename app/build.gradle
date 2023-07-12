@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId 'com.telefoncek.silentsms.detector'
-        minSdkVersion 31
+        minSdkVersion 23
         targetSdkVersion 33
         versionCode 6
         versionName "4"
