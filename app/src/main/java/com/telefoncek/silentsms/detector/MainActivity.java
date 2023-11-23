@@ -49,6 +49,8 @@ public final class MainActivity extends AppCompatActivity {
 
     final String TAG = "Ping SMS";
 
+    final Integer flag = 1;
+
     final String SENT = "pingsms.sent";
     final String DELIVER = "pingsms.deliver";
 
@@ -101,8 +103,16 @@ public final class MainActivity extends AppCompatActivity {
             if (MainActivity.this.checkPermissions() && !TextUtils.isEmpty(phoneNum) && Patterns.PHONE.matcher(phoneNum).matches()) {
                 resultText.setText(null);
                 updateHistory(phoneNum);
-
-                getSystemService(SmsManager.class).sendDataMessage(phoneNum, null, (short) 9200, payload, sentPI, deliveryPI);
+                // 发送消息
+                switch (flag) {
+                    case 1:
+                        getSystemService(SmsManager.class).sendDataMessage(phoneNum, null, (short) 9200, payload, sentPI, deliveryPI);
+                    case 2:
+                        // need root
+//                        getSystemService(SmsManager.class).sendTextMessageWithoutPersisting(phoneNum, null, "", sentPI, deliveryPI);
+                    default:
+                        System.out.println(1);
+                }
             }
         });
 
